@@ -1,5 +1,4 @@
 # dmarctest.py
-Tiny phython script to test DMARC.
 
 ##  Description
 DMARC認証のテスト用スクリプトです。
@@ -10,11 +9,10 @@ DMARC認証のテスト用スクリプトです。
 2. Python3
 3. ローカルSMTPサーバー
 
-
 ##  使い方
 SSHターミナルコンソールから下記のようにスクリプトを実行。
 
-python3 ./dmarctest.py --to 宛先メールアドレス --hf ヘッダーFrom --ef エンベロープFrom
+> python3 ./dmarctest.py --to 宛先メールアドレス --hf ヘッダーFrom --ef エンベロープFrom
 
 
 
