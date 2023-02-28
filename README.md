@@ -1,6 +1,6 @@
 # dmarctest.py
 
-##  Description
+## 説明
 DMARC認証のテスト用スクリプトです。
 意図的に認証を失敗させて、DMARCレポートを取得する等の目的で使用します。
 
@@ -9,10 +9,19 @@ DMARC認証のテスト用スクリプトです。
 2. Python3
 3. ローカルSMTPサーバー
 
-##  使い方
+## 使い方
 SSHターミナルコンソールから下記のようにスクリプトを実行。
 
-> python3 ./dmarctest.py --to 宛先メールアドレス --hf ヘッダーFrom --ef エンベロープFrom
+```
+python3 ./dmarctest.py --to 宛先メールアドレス --hf ヘッダーFrom --ef エンベロープFrom
+```
+
+###  DMARC認証失敗レポートを発生させるには
+--hfと--efにて異なるメールアドレスを記述します。例えば、
+
+```
+python3 ./dmarctest.py --to brandkeeper.jp@gmail.com --hf info@brandkeeper.jp --ef fake@brandkeeper.jp
+```
 
 
 
