@@ -20,16 +20,16 @@ python3 ./dmarctest.py --to 宛先メールアドレス --hf ヘッダーFrom --
 --hfと--efにて異なるメールアドレスを記述します。例えば、下記のようにすればSPFアラインメントのDMARC認証エラーとなります。
 ヘッダーFromが@rms.ne.jp、エンベロープFromが@brandkeeper.jpとなりドメインが異なるので、アラインメントエラーとなります。
 
-アラインメントエラーの場合
+1. アラインメントエラーの場合
 ```
 python3 ./dmarctest.py --to brandkeeper.jp@gmail.com --hf info@rms.ne.jp --ef fake@brandkeeper.jp
 ```
 
-DMARC認証成功の場合
+2. DMARC認証成功の場合
+（送信元SMTPサーバーのIPアドレスがSPFレコードに登録済みと想定）
 ```
-python3 ./dmarctest.py --to brandkeeper.jp@gmail.com --hf info@rms.ne.jp --ef fake@brandkeeper.jp
+python3 ./dmarctest.py --to brandkeeper.jp@gmail.com --hf info@brandkeeper.jp --ef fake@brandkeeper.jp
 ```
-
 
 ### DMARCレポートの動き
 次に、DMARCレポートの動きを見ます。
